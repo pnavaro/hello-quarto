@@ -84,27 +84,6 @@ Quarto is a new, open-source,<br> scientific and technical<br> publishing system
 
 ![](images/1-share/rmd_ecosystem.png){fig-align="center" fig-alt="Hex logos for various packages from the R Markdown ecosystem."}
 
-::: notes
-Julie mentioned unifying the R Markdown ecosystem so let's dig a bit more into what that means...
-
-Think of all the packages from the R Markdown universe that you've come to love and rely on over the years.
-Each package addresses a different need and offers a different output: for example, you can use blogdown or distill for creating websites and blogs, bookdown for writing a book, rticles for writing journal articles, etc.
-:::
-
-## Quarto: Next generation R Markdown {transition="zoom"}
-
-![](images/horst_quarto_ball_straight.png){fig-align="center" width="50%" fig-alt="Quarto logo."}
-
-::: notes
-Quarto unifies the functionality from these packages,
-
-building on Pandoc on the technical side
-
-and on the human side -- over a decade of experience developing, maintaining, and tweaking these packages as well as community feedback R Markdown extension packages.
-
-Such a unification effort presents a fantastic  opportunity to identify and address gaps functionality and inefficiencies in user experience, and the process of building Quarto has been no different.
-:::
-
 ## Quarto highlights
 
 ::: columns
@@ -290,14 +269,6 @@ It's useful not just to you, but to the world<br> as it facilitates open sharing
 # Teach {.title-middle-ice background-image="images/horst_quarto_penguins_teach.png" aria-label="Two penguins in a room made of ice, looking out a window. One penguin is holding an icicle as a pointer, pointing at a Quarto logo moon in the sky, while the other penguin looks on."}
 
 ::: notes
-**Julie:** Transition: And this has teaching implications that Mine will talk about next.
-
-**Mine:**Over the last decade I have thoroughly loved teaching R Markdown.
-It's amazing when students hit that Knit button, see their code and their prose come together -- you can often hear a "wow, that's so cool" in the classroom the first time that happens.
-I've also loved that this is a tool that they can pick up easily on the first day of an intro course, and it grows with them as their statistical and computational expertise grows.
-However, as students' expertise in these areas grow, the computation gets more resource intensive (and even sometimes involving multiple languages) and they end up needing different output formats to support their needs, like PDFs in specific journal styles or a thesis with multiple chapters.
-A pleasant surprise in teaching with Quarto has been how much less steep the learning curve is for making this transition from single, simple document to a multi-document projects.
-Let me tell you the story of one of my thesis students.
 :::
 
 ## Course materials with Quarto {.takeaway .center}
@@ -309,25 +280,6 @@ Let me tell you the story of one of my thesis students.
 :::
 
 ::: notes
-And beyond learners growing and expanding the scope of their work easily with Quarto, Quarto can grow with them in a profound way as well.
-
---> The fact that Quarto is language and authoring tool independent offers an opportunity for folks to take Quarto with them on their data science journey, wherever that journey takes them.
-I mean..
-I'm almost tempted to finally learn Python to see it in action in Quarto.
-But who I know is learning Python, and Julia, and other languages are my students in their Computer Science courses.
-To imagine that they could learn R in RStudio using Quarto in my course, and then continue to use Quarto in Jupyter in their CS courses... That sounds like such a bright future to me!
-
-**\[Pause\]** And a bright future includes things we can't even imagine yet.
-
-**\[Mine continue on next slide\]**
-:::
-
-# [pnavaro.quarto.pub/hello-quarto](https://pnavaro.quarto.pub/hello-quarto) {#coda .custom-url-top-white data-menu-title="Coda" background-image="images/horst-quarto-meteor.png" aria-label="A meteor where the head of the meteor is the Quarto logo, with dark background."}
-
-::: notes
-If you would like to start sharing, collaborating, teaching, and reimagining with Quarto by picking up where we left off, go to this link and scroll forward to see the next few slides where we share resources for learning as well as references for the works we presented today.
-And if you have any questions about Quarto or R Markdown, please stop by the Open Source table in the Lounge between 12-3pm today.
-And don't miss the Quarto session at 3:20pm!
 :::
 
 ## References
