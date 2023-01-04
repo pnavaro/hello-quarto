@@ -1,4 +1,4 @@
-- source: index.qmd
+- source: project
   quarto-pub:
-    - id: d7a0794d-c3e7-47cf-930a-c518838016cc
-      url: 'https://quartopub.org/sites/mine/hello-quarto'
+    - id: 1be7cfc1-93ba-47b2-a1d5-4f05dcac6e13
+      url: 'https://quartopub.com/sites/pnavaro/hello-quarto'

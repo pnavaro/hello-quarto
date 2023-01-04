@@ -6,3 +6,6 @@
 *.m4v
 .DS_Store
 videos/*
+_site
+/.quarto/
+/.luarc.json

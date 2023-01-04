@@ -19,38 +19,17 @@ editor: visual
 
 [share • collaborate • teach • reimagine]{.custom-subtitle}
 
-[mine çetinkaya-rundel <br> julia stewart lowndes]{.custom-author}
+[pierre navaro]{.custom-author}
 
-[[mine.quarto.pub/hello-quarto](https://mine.quarto.pub/hello-quarto/)]{.custom-url}
+[[pnavaro.quarto.pub/hello-quarto](https://pnavaro.quarto.pub/hello-quarto/)]{.custom-url}
 
 [artwork by allison horst]{.custom-artwork}
 
-::: notes
-Thank you so much, we're excited to be here!
-Mine and I have been using Quarto for the last year; she has been teaching and contributing to the development of Quarto it since its earliest days and Openscapes has been the first external users of Quarto.
-As we've woven it into our work we realize we love it, and we're thrilled to welcome you to Quarto.
-:::
-
-# Hello, Quarto? {.title-top-light background-image="images/horst-quarto-meteor-transparent.png" aria-label="A meteor where the head of the meteor is the Quarto logo."}
-
-::: notes
-But also, we know you have questions.
-We did too.
-What is Quarto?
-Why is Quarto?
-And how does it relate to R Markdown and the workflows you already have?
-
---\> Well
-:::
 
 ##  {#unifies-extends-1 .centered data-menu-title="Unifies and extends 1" background-color="#0F1620" auto-animate="true"}
 
 ::: {style="margin-top: 150px; font-size: 3em; color: #75AADB;"}
 Quarto **unifies** and **extends**<br>the R Markdown ecosystem
-:::
-
-::: notes
-Quarto unifies & extends the R Markdown ecosystem.
 :::
 
 ##  {#unifies-extends-2 .centered data-menu-title="Unifies and extends 2" background-color="#0F1620" auto-animate="true"}
@@ -101,49 +80,249 @@ Quarto is a new, open-source,<br> scientific and technical<br> publishing system
 ![](images/horst_quarto_schematic.png){fig-align="center" width="1100px" fig-alt="A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto."}
 :::
 
-::: notes
-The goal is to make the process of creating and collaborating dramatically better.
+## The R Markdown ecosystem
 
---\> It handles inputs in multiple languages, and outputs in multiple formats, all going through the same machinery.
-
---\> In our talk today, we'll introduce you to Quarto with stories and demos.
-:::
-
-##  {#outline-1 .centered data-menu-title="Outline 1" auto-animate="true"}
-
-![](images/outline-1.png){fig-alt="Quarto logo with two quadrants labelled as Share and Teach with a blue penguin next to it."}
+![](images/1-share/rmd_ecosystem.png){fig-align="center" fig-alt="Hex logos for various packages from the R Markdown ecosystem."}
 
 ::: notes
-First Mine will focus on how Quarto unifies the R Markdown ecosystem through stories of sharing and teaching
+Julie mentioned unifying the R Markdown ecosystem so let's dig a bit more into what that means...
+
+Think of all the packages from the R Markdown universe that you've come to love and rely on over the years.
+Each package addresses a different need and offers a different output: for example, you can use blogdown or distill for creating websites and blogs, bookdown for writing a book, rticles for writing journal articles, etc.
 :::
 
-##  {#outline-2 .centered data-menu-title="Outline 2" auto-animate="true"}
+## Quarto: Next generation R Markdown {transition="zoom"}
 
-![](images/outline-2.png){fig-alt="Quarto logo with two quadrants labelled as Collaborate and Reimagine with an orange penguin next to it."}
+![](images/horst_quarto_ball_straight.png){fig-align="center" width="50%" fig-alt="Quarto logo."}
 
 ::: notes
-Then I will focus on how Quarto extends the R Markdown ecosystem through collaborating and reimagining
+Quarto unifies the functionality from these packages,
+
+building on Pandoc on the technical side
+
+and on the human side -- over a decade of experience developing, maintaining, and tweaking these packages as well as community feedback R Markdown extension packages.
+
+Such a unification effort presents a fantastic  opportunity to identify and address gaps functionality and inefficiencies in user experience, and the process of building Quarto has been no different.
 :::
 
-##  {#outline-3 .centered data-menu-title="Outline 3" auto-animate="true"}
+## Quarto highlights
 
-![](images/outline-3.png){fig-alt="Quarto logo with all fouur quadrants labelled as Share, Collaborate, Teach, and Reimagine."}
+::: columns
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+::: bulletbox
+::: {.fragment .fade-in-then-semi-out}
+![](images/horst_quarto_ball-1_4.png){width="50px" fig-alt="One quadrant of the Quarto logo."} Consistent implementation of attractive and handy features across outputs: tabsets, code-folding, syntax highlighting, etc.
+:::
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+::: bulletbox
+::: {.fragment .fade-in-then-semi-out}
+![](images/horst_quarto_ball-2_4.png){width="50px" fig-alt="Two quadrants of the Quarto logo."} More accessible defaults as well as better support for accessibility
+:::
+:::
+:::
+
+::: {.column width="5%"}
+:::
+:::
+
+::: columns
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+::: bulletbox
+::: {.fragment .fade-in-then-semi-out}
+![](images/horst_quarto_ball-3_4.png){width="50px" fig-alt="Three quadrants of the Quarto logo."} Guardrails, particularly helpful for new learners: YAML completion, informative syntax errors, etc.
+:::
+:::
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+::: bulletbox
+::: {.fragment .fade-in-then-semi-out}
+![](images/horst_quarto_ball-4_4.png){width="50px" fig-alt="Four quadrants of the Quarto logo."} Support for other languages like Python, Julia, Observable, and more via Jupyter engine for executable code chunks.
+:::
+:::
+:::
+
+::: {.column width="5%"}
+:::
+:::
 
 ::: notes
-**Julie:** We're excited to get started!
+Some highlights of these improvements include
 
-NEXT - So let's let Mine kick it off to talk about sharing with Quarto.
+--\> consistent implementation of attractive and handy features across *all* outputs, like tabsets, code-folding, and syntax highlighting,
+
+--\> more accessible defaults as well as better support for creating accessible documents,
+
+--\> guardrails that are particularly helpful for new learners, like YAML completion and informative syntax errors,
+
+--\> and perhaps most excitingly for those who are not coming from the R ecosystem, Quarto offers support for other languages like Python, Julia, Observable, and more via the Jupyter engine for executable code chunks.
+And it's designed to be expandable to more engines and languages, even those that might not exist today.
+
+[pause] So by now I'm assuming many of you have already started playing with Quarto, or you're waiting for me to do that.
+So, let's dive in and see what all the Quarto fuss is about!
 :::
 
-{{< include _1-share.qmd >}}
+##  {#demo-share .centered data-menu-title="Demo: Share" background-video="videos/demo-1-share.mp4" background-size="contain" background-color="#FFFFFF"}
 
-{{< include _2-collaborate.qmd >}}
+::: notes
+-   Open hello.Rmd with source editor -\> knit
+-   Change to visual editor -\> knit
+-   Close file -\> change file type to .qmd -\> open + render
+-   Change `output: html_document` to `format: html` -\> render
+-   Click on Render on save
+-   Change to `format: pdf` -\> render -\> then change back
+-   Add chunk option `echo: false` to the first chunk
+-   Add `execute` > `echo: false` to the yaml
+-   Add alt text to figure in second code chunk -\> save to render
+-   Change to `format: revealjs` -\> save to render
+-   Add H2 to break slides
+-   Change to `format: html`
+-   Add `index.qmd` with File \> New Quarto Document
+-   Add `_quarto.yml` for website
+-   Relaunch project
+-   Show new Build tab
+-   Render site, show `_site` folder
+-   Add freeze to _quarto.yml
+-   From terminal: `quarto publish`
+:::
 
-{{< include _3-teach.qmd >}}
+## Quarto CLI orchestrates<br>each step of rendering {.takeaway .center}
 
-{{< include _4-reimagine.qmd >}}
+::: {.fragment .fade-up}
+![](images/horst_qmd_render_schema.png){fig-alt="A schematic representing rendering of Quarto documents from .qmd, to knitr or jupyter, to plain text markdown, then converted by pandoc into any number of output types including html, PDF, or Word document." fig-align="center"}
+:::
 
-# [mine.quarto.pub/hello-quarto](https://mine.quarto.pub/hello-quarto) {#coda .custom-url-top-white data-menu-title="Coda" background-image="images/horst-quarto-meteor.png" aria-label="A meteor where the head of the meteor is the Quarto logo, with dark background."}
+::: notes
+Now that you've all had a chance to see Quarto in action, you might be wondering, "how are R Markdown and Quarto different"?
+
+The main difference is that with R Markdown, the R package rmarkdown does the heavy lifting of going from the source Rmd file to the the output, using knitr for evaluating the code chunks.
+
+--\> With Quarto, on the other hand, the Quarto command line interface, or the Quarto CLI, does the orchestration of processing executable code chunks with either knitr or jupyter and then converting the resulting markdown file to the desired output.
+
+While this is technically impressive, I'll be honest, it's not exactly what sparked my interest in Quarto in the first place.
+:::
+
+## Quarto makes moving between formats straightforward {.takeaway .center}
+
+::: columns
+::: {.column width="33%"}
+::: fragment
+Document
+
+::: {.code-file .sourceCode .cell-code}
+{{< fa file >}} lesson-1.qmd
+:::
+
+``` yaml
+title: "Lesson 1"
+format: html
+```
+
+:::
+:::
+
+::: {.column width="33%"}
+::: fragment
+Presentation
+
+::: {.code-file .sourceCode .cell-code}
+{{< fa file >}} lesson-1.qmd
+:::
+
+``` yaml
+title: "Lesson 1"
+format: revealjs
+```
+
+:::
+:::
+
+::: {.column width="33%"}
+::: fragment
+Website
+
+::: {.code-file .sourceCode .cell-code}
+{{< fa file >}} _quarto.yml
+:::
+
+``` yaml
+project:
+  type: website
+
+website: 
+  navbar: 
+    left:
+      - lesson-1.qmd
+```
+:::
+:::
+:::
+
+## Quarto facilitates open sharing {.takeaway .center}
+
+<br>
+
+::: {.fragment .fade-up .midi}
+Tooling that makes it easy to share what you do<br> with the world on the web is incredibly useful
+:::
+
+<br>
+
+::: {.fragment .fade-up .midi}
+It's useful not just to you, but to the world<br> as it facilitates open sharing of knowledge<br> for learning and for reuse
+:::
+
+# Teach {.title-middle-ice background-image="images/horst_quarto_penguins_teach.png" aria-label="Two penguins in a room made of ice, looking out a window. One penguin is holding an icicle as a pointer, pointing at a Quarto logo moon in the sky, while the other penguin looks on."}
+
+::: notes
+**Julie:** Transition: And this has teaching implications that Mine will talk about next.
+
+**Mine:**Over the last decade I have thoroughly loved teaching R Markdown.
+It's amazing when students hit that Knit button, see their code and their prose come together -- you can often hear a "wow, that's so cool" in the classroom the first time that happens.
+I've also loved that this is a tool that they can pick up easily on the first day of an intro course, and it grows with them as their statistical and computational expertise grows.
+However, as students' expertise in these areas grow, the computation gets more resource intensive (and even sometimes involving multiple languages) and they end up needing different output formats to support their needs, like PDFs in specific journal styles or a thesis with multiple chapters.
+A pleasant surprise in teaching with Quarto has been how much less steep the learning curve is for making this transition from single, simple document to a multi-document projects.
+Let me tell you the story of one of my thesis students.
+:::
+
+## Course materials with Quarto {.takeaway .center}
+
+<br>
+
+::: {.fragment .fade-up}
+![](images/3-teach/many-lang-qmd-to-output.png){fig-alt="A schematic showing many computing languages (R, Python, Julia, Observable, and more) going into many single qmd files, going through Quarto, to generate an HTML, PDF, or Word document or more. The Quarto logo is depicted as a baseball a penguin is spinning." fig-align="center"}
+:::
+
+::: notes
+And beyond learners growing and expanding the scope of their work easily with Quarto, Quarto can grow with them in a profound way as well.
+
+--> The fact that Quarto is language and authoring tool independent offers an opportunity for folks to take Quarto with them on their data science journey, wherever that journey takes them.
+I mean..
+I'm almost tempted to finally learn Python to see it in action in Quarto.
+But who I know is learning Python, and Julia, and other languages are my students in their Computer Science courses.
+To imagine that they could learn R in RStudio using Quarto in my course, and then continue to use Quarto in Jupyter in their CS courses... That sounds like such a bright future to me!
+
+**\[Pause\]** And a bright future includes things we can't even imagine yet.
+
+**\[Mine continue on next slide\]**
+:::
+
+# [pnavaro.quarto.pub/hello-quarto](https://pnavaro.quarto.pub/hello-quarto) {#coda .custom-url-top-white data-menu-title="Coda" background-image="images/horst-quarto-meteor.png" aria-label="A meteor where the head of the meteor is the Quarto logo, with dark background."}
 
 ::: notes
 If you would like to start sharing, collaborating, teaching, and reimagining with Quarto by picking up where we left off, go to this link and scroll forward to see the next few slides where we share resources for learning as well as references for the works we presented today.
@@ -151,24 +330,11 @@ And if you have any questions about Quarto or R Markdown, please stop by the Ope
 And don't miss the Quarto session at 3:20pm!
 :::
 
-# Thank you {.title-top-dark background-image="images/horst_quarto_penguins_thankyou.png"}
+## References
 
-::: notes
-Thank you so much for joining us this morning, here in person or from wherever you are tuning in to the live stream.
-We've talked about our experiences using Quarto and all the problems it has helped us solve and reimagine, but while Quarto is stable and ready for use, it's also a baby that you too can be a part of its growth.
-So start using Quarto, and get involved by asking questions, reporting issues, providing feedback, and even building extensions for it.
-We can't wait to see what you create!
-:::
+-   Slides: [github.com/mine-cetinkaya-rundel/hello-quarto-demo](https://github.com/mine-cetinkaya-rundel/hello-quarto-demo)
 
-## Say hello to Quarto!
-
--   Pick up where we left off: [github.com/mine-cetinkaya-rundel/hello-quarto-demo](https://github.com/mine-cetinkaya-rundel/hello-quarto-demo)
-
--   Coming up at rstudio::conf(2022) -- Quarto deep dive - Potomac C - 3:20pm:
-
-    -   Tracy Teal - These are a few of my favorite things (about Quarto presentations)
-    -   Hamel Husain - Literate Programming With Jupyter Notebooks and Quarto
-    -   Devin Pastoor - Websites & Books & Blogs, oh my! Creating Rich Content with Quarto
+-   Video: [Quarto - le nouvel outil pour créer vos dataviz](https://youtu.be/Cwg7tdSdRvY)
 
 -   Video: [Reproducible authoring with Quarto](https://youtu.be/6p4vOKS6Xls)
 
@@ -180,108 +346,6 @@ We can't wait to see what you create!
 
 -   Quarto tip a day: [rstd.io/quartotip](https://rstd.io/quartotip)
 
-![](images/horst-quarto-penguins.png){fig-alt="Two penguins. The orange one is holding the Quarto logo. The blue one is looking at the orange one." fig-align="right" width="600"}
-
-## Engage, empower, amplify with Openscapes
-
--   Coming up at rstudio::conf(2022)
-
-    -   Ileana Fenwick - [A Journey to Data Science: Tools for Equity and Diversity in STEM](https://rstudioconf2022.sched.com/event/11ib8/a-journey-to-data-science-tools-for-equity-and-diversity-in-stem). 1:30pm - 1:50pm EDT
-
--   Openscapes: [openscapes.org](https://openscapes.org)
-
-    -   [Champions Lesson Series](https://openscapes.org/series)
-    -   [Approach Guide](https://openscapes.org/approach-guide)
-    -   [Quarto Website Tutorial](https://openscapes.github.io/quarto-website-tutorial/)
-
--   NASA Openscapes: [nasa-openscapes.github.io](https://nasa-openscapes.github.io)
-
--   NMFS Openscapes: [nmfs-openscapes.github.io](https://nmfs-openscapes.github.io)
-
--   [Supercharge your research: a ten-week plan for open data science](https://openscapes.github.io/series/Supercharge%20your%20research:%20a%20ten-week%20plan%20for%20open%20data%20science) (Lowndes et al. 2019)
-
--   [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160) (Lowndes et al. 2017)
-
--   [Open Software Means Kinder Science](https://blogs.scientificamerican.com/observations/open-software-means-kinder-science/)
-
-## Earthrise by Amanda Gorman[^1] {.smaller}
-
-[^1]: [Full text and video for Earthrise by Amanda Gorman](https://www.sierraclub.org/los-padres/blog/2021/02/earthrise-poem-amanda-gorman)
-
-::: columns
-::: {.column width="40%"}
-So, earth, pale blue dot<br> We will fail you not.<br>
-
-Just as we chose to go to the moon<br> We know it's never too soon<br> To choose hope.<br> We choose to do more than cope<br> With climate change<br> We choose to end it---<br> We refuse to lose.<br> Together we do this and more<br> Not because it's very easy or nice<br> But because it is necessary,<br> Because with every dawn we carry<br> the weight of the fate of this celestial body orbiting a star.<br> And as heavy as that weight sounded, it doesn't hold us down,<br> But it keeps us grounded, steady, ready,<br> Because an environmental movement of this size<br> Is simply another form of an earthrise.<br>
-:::
-
-::: {.column width="60%"}
-![NASA, Apollo 8, 1968](images/earthrise_nasa.jpg){fig-align="right"}
-:::
-:::
-
-## Annotated Notes: Share {.small}
-
-Mine Çetinkaya-Rundel PhD <https://mine-cr.com>
-
--   Hex logos: <https://github.com/rstudio/hex-stickers>
-
--   How it works: <https://quarto.org/docs/get-started/hello/rstudio.html#how-it-works>
-
-## Annotated Notes: Collaborate {.small}
-
-Julia Stewart Lowndes PhD <https://jules32.github.io>
-
-**Openscapes**
-
-<https://openscapes.org>
-
-**NASA Images**
-
--   Spinning Globe Earthdata: <https://svs.gsfc.nasa.gov/30701>
--   NASA Hyperwall: <https://eospso.nasa.gov/content/about-nasas-hyperwall>
-
-**NASA-Openscapes**
-
--   [nasa-openscapes.github.io](https://nasa-openscapes.github.io)
-
--   [2021 Cloud Hackathon](https://nasa-openscapes.github.io/2021-Cloud-Hackathon/)
-
--   [2021 Cloud Workshop at AGU](https://nasa-openscapes.github.io/2021-Cloud-Workshop-AGU/)
-
--   [2022 SWOT Ocean Hackathon](https://podaac.github.io/2022-SWOT-Ocean-Cloud-Workshop/)
-
-**Demo: JupyterLab** JupyterHub managed by 2i2c <https://2i2c.org>
-
-**Other** Rey with Quarto, throwback to <https://jules32.github.io/useR-2019-keynote>
-
-## Annotated Notes: Teach
-
--   Photo credit for Holland Stam: <https://undergraduateresearch.duke.edu/news/data-scraping-art-history-survey-texts>
-
--   📦 arthistory: <https://saralemus7.github.io/arthistory>
-
-## Annotated Notes: Reimagine {.small}
-
-**All We Can Save**: <https://www.allwecansave.earth>
-
-How to answer the Q of "What should I do to fight climate change?" <br> A: "What are you good at? Do that. Do that in the service of climate" - ([ayanaeliza](https://twitter.com/juliesquid/status/1362573772096593923))
-
-**FayLab Manual**
-
 -   [Learning by doing: migrating to Quarto from Bookdown](https://www.openscapes.org/blog/2022/07/21/quarto-migrate/)
--   Re: Tara Robertson on psychological safety [A Chat with Tara Robertson](https://www.openscapes.org/blog/2021/05/27/tara-robertson/)
--   Re: Gavin Fay on psychological safety: [Openscapes is Awesome! Building lab resources to sustain future us with tools from open data science](https://docs.google.com/presentation/d/1c624mH3md8pQHiP6rJ7HPuhxDLgNB7xvONDZlUM3f64/edit#slide=id.gb6050dd30d_0_0)
 
-**Quarto Mosaic**
-
-See also: [3 takeaways for planning for the year of open science](https://www.openscapes.org/blog/2022/02/17/esip-winter-2022/)
-
--   <https://openscapes.github.io/approach-guide>
--   <https://nmfs-openscapes.github.io>
-
-**NASA images**
-
--   <https://twitter.com/nasaearth>
--   <https://twitter.com/UNOOSA/status/803692453358424064/photo/1>
--   <https://www.doi.gov/blog/earth-art-stunning-landsat-images>
+![](images/horst-quarto-penguins.png){fig-alt="Two penguins. The orange one is holding the Quarto logo. The blue one is looking at the orange one." fig-align="right" width="600"}
