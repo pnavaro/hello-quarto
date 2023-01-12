@@ -9,3 +9,4 @@ videos/*
 _site
 /.quarto/
 /.luarc.json
+index-speaker.html

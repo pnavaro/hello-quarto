@@ -25,7 +25,6 @@ editor: visual
 
 [artwork by allison horst]{.custom-artwork}
 
-
 ##  {#unifies-extends-1 .centered data-menu-title="Unifies and extends 1" background-color="#0F1620" auto-animate="true"}
 
 ::: {style="margin-top: 150px; font-size: 3em; color: #75AADB;"}
@@ -74,16 +73,14 @@ Quarto is a new, open-source,<br> scientific and technical<br> publishing system
 
 The rmarkdown package helps you create dynamic analysis documents that combine code, rendered output (such as figures), and prose. You bring your data, code, and ideas, and R Markdown renders your content into a polished document that can be used to:
 
-- Do data science interactively within the RStudio IDE,
-- Reproduce your analyses,
-- Collaborate and share code with others, and
-- Communicate your results with others.
-*R Markdown documents can be rendered to many output formats including HTML documents, PDFs, Word files, slideshows, and more, allowing you to focus on the content while R Markdown takes care of your presentation.*
+-   Do data science interactively within the RStudio IDE,
+-   Reproduce your analyses,
+-   Collaborate and share code with others, and
+-   Communicate your results with others. *R Markdown documents can be rendered to many output formats including HTML documents, PDFs, Word files, slideshows, and more, allowing you to focus on the content while R Markdown takes care of your presentation.*
 
 ## The R Markdown ecosystem
 
 ![](images/1-share/rmd_ecosystem.png){fig-align="center" fig-alt="Hex logos for various packages from the R Markdown ecosystem."}
-
 
 ## Quarto README
 
@@ -91,11 +88,11 @@ Quarto is an open-source scientific and technical publishing system built on Pan
 
 In addition to the core capabilities of Pandoc, Quarto includes:
 
- - Embedding code and output from Python, R, and JavaScript via integration with Jupyter, Knitr, and Observable.
- - A variety of extensions to Pandoc markdown useful for technical writing including cross-references, sub-figures, layout panels, hoverable citations and footnotes, callouts, and more.
- - A project system for rendering groups of documents at once, sharing options across documents, and producing aggregate output like websites and books.
- - Authoring using a wide variety of editors and notebooks including JupyterLab, RStudio, and VS Code.
- - A visual markdown editor that provides a productive writing interface for composing long-form documents.
+-   Embedding code and output from Python, R, and JavaScript via integration with Jupyter, Knitr, and Observable.
+-   A variety of extensions to Pandoc markdown useful for technical writing including cross-references, sub-figures, layout panels, hoverable citations and footnotes, callouts, and more.
+-   A project system for rendering groups of documents at once, sharing options across documents, and producing aggregate output like websites and books.
+-   Authoring using a wide variety of editors and notebooks including JupyterLab, RStudio, and VS Code.
+-   A visual markdown editor that provides a productive writing interface for composing long-form documents.
 
 ## Quarto highlights
 
@@ -153,8 +150,7 @@ In addition to the core capabilities of Pandoc, Quarto includes:
 :::
 :::
 
-##  Demo
-
+## Demo
 
 ## Quarto CLI orchestrates<br>each step of rendering {.takeaway .center}
 
@@ -177,7 +173,6 @@ Document
 title: "Lesson 1"
 format: html
 ```
-
 :::
 :::
 
@@ -193,7 +188,6 @@ Presentation
 title: "Lesson 1"
 format: revealjs
 ```
-
 :::
 :::
 
