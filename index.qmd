@@ -258,6 +258,22 @@ It's useful not just to you, but to the world<br> as it facilitates open sharing
 
 -   Quarto tip a day: [rstd.io/quartotip](https://rstd.io/quartotip)
 
+## Tutorials
+
 -   [Learning by doing: migrating to Quarto from Bookdown](https://www.openscapes.org/blog/2022/07/21/quarto-migrate/)
 
-![](images/horst-quarto-penguins.png){fig-alt="Two penguins. The orange one is holding the Quarto logo. The blue one is looking at the orange one." fig-align="right" width="600"}
+- [With Quarto Coming, is R Markdown Going Away? No.](https://yihui.org/en/2022/04/quarto-r-markdown/)
+- [Porting a distill blog to quarto](https://blog.djnavarro.net/posts/2022-04-20_porting-to-quarto)
+- [Notes on Changing from Rmarkdown/Bookdown to Quarto](https://www.njtierney.com/post/2022/04/11/rmd-to-qmd/) 
+
+
+## Examples
+
+- [Python tools for Big Data](https://pnavaro.github.io/big-data/quarto)
+- [Statistique en grande dimension](https://pnavaro.github.io/tutoriel-grande-dimension/)
+- [A Python Package for Sampling from Copulae: clayton](https://github.com/computorg/published-202301-boulin-clayton)
+- [Partitionnement élagué avec des divergences de Bregman](https://brecheteau.pages.math.cnrs.fr/trimmed-bregman-clustering/quarto)
+
+## Examples
+
+- 
