@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 0fc06e35-0a35-4da7-ace8-a697b01d0193
+      url: 'https://quartopub.com/sites/pierre-navaro/hello-quarto'
