@@ -19,11 +19,67 @@ editor: visual
 
 [share • collaborate • teach • reimagine]{.custom-subtitle}
 
-[pierre navaro]{.custom-author}
+[Pierre Navaro]{.custom-author}
 
-[[pnavaro.quarto.pub/hello-quarto](https://pnavaro.quarto.pub/hello-quarto/)]{.custom-url}
+[[pnavaro.quarto.pub/hello-quarto](https://pierre-navaro.quarto.pub/hello-quarto/)]{.custom-url}
+
 
 [artwork by allison horst]{.custom-artwork}
+
+## Publishing tools using Markdown {background-color="#0F1620" auto-animate="true"}
+
+- Static site generators: [Jekyll](https://jekyllrb.com), [Hugo](https://gohugo.io), [Pelican](https://docs.getpelican.com/).
+
+- Converters
+   * [Pandoc](https://pandoc.org) : a universal document converter 
+   * [jupytext](https://jupytext.readthedocs.io/en/latest/) : Jupyter Notebooks as Markdown Documents, Julia, Python or R scripts 
+
+- Slides
+   * [pandoc + beamer](https://fr.overleaf.com/learn/latex/Beamer) : use the presentation class for $\LaTeX$
+   * [remark](https://github.com/gnab/remark) : markdown-driven slideshow tool  
+   * [RISE](https://rise.readthedocs.io/en/stable/) : Reveal.js - Jupyter/IPython Slideshow Extension 
+
+- Julia 
+   * [Remark.jl](https://github.com/piever/Remark.jl) : Create markdown presentations
+   * [Franklin.jl](https://franklinjl.org) : Building static websites
+   * [Weave.jl](https://weavejl.mpastell.com/stable/) : Scientific Reports
+
+## {background-color="#0F1620"}
+
+![](images/jupyterbook-logo.svg){fig-align="center" width="1100px"}
+
+- Nice documentation [https://jupyterbook.org](https://jupyterbook.org),
+- utilizes [Sphinx](https://www.sphinx-doc.org) heavily under the hood
+- large community, 
+- many extensions, 
+- MyST syntax is really great. 
+- Rmd files could be used through jupytext (did not try)
+- This is the best alternative to quarto.
+
+##  The R Markdown {background-color="#0F1620" auto-animate="true"}
+
+::: {style="font-size: 1.2em; text-align: left"}
+::: {.fragment .fade-up}
+The rmarkdown package helps you create dynamic analysis documents that combine code, rendered output (such as figures), and prose. You bring your data, code, and ideas, and R Markdown renders your content into a polished document that can be used to:
+:::
+
+::: {.incremental}
+
+- Do data science interactively within the RStudio IDE,
+- Reproduce your analyses,
+- Collaborate and share code with others, and
+- Communicate your results with others. *R Markdown documents can be rendered to many output formats including HTML documents, PDFs, Word files, slideshows, and more, allowing you to focus on the content while R Markdown takes care of your presentation.*
+
+:::
+:::
+
+## The R Markdown ecosystem {background-color="#0F1620" auto-animate="true"}
+
+![](images/1-share/rmd_ecosystem.png){fig-align="center" fig-alt="Hex logos for various packages from the R Markdown ecosystem."}
+
+::: {.centered}
+You can run Python or Julia code in an R Markdown document, but… you have to install R.
+:::
 
 ##  {#unifies-extends-1 .centered data-menu-title="Unifies and extends 1" background-color="#0F1620" auto-animate="true"}
 
@@ -49,6 +105,8 @@ Quarto **unifies** and **extends** <br>the R Markdown ecosystem
 **extends** for people who don't know R Markdown
 :::
 
+
+
 ##  {#publishing-system-1 .centered data-menu-title="Publishing system 1" background-color="#0F1620" auto-animate="true"}
 
 ::: {style="margin-top: 100px; font-size: 3em; color: #75AADB;"}
@@ -69,93 +127,43 @@ Quarto is a new, open-source,<br> scientific and technical<br> publishing system
 ![](images/horst_quarto_schematic.png){fig-align="center" width="1100px" fig-alt="A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto."}
 :::
 
-## The R Markdown README
-
-The rmarkdown package helps you create dynamic analysis documents that combine code, rendered output (such as figures), and prose. You bring your data, code, and ideas, and R Markdown renders your content into a polished document that can be used to:
-
--   Do data science interactively within the RStudio IDE,
--   Reproduce your analyses,
--   Collaborate and share code with others, and
--   Communicate your results with others. *R Markdown documents can be rendered to many output formats including HTML documents, PDFs, Word files, slideshows, and more, allowing you to focus on the content while R Markdown takes care of your presentation.*
-
-## The R Markdown ecosystem
-
-![](images/1-share/rmd_ecosystem.png){fig-align="center" fig-alt="Hex logos for various packages from the R Markdown ecosystem."}
-
-## Quarto README
-
-Quarto is an open-source scientific and technical publishing system built on Pandoc. Quarto documents are authored using markdown, an easy to write plain text format.
-
-In addition to the core capabilities of Pandoc, Quarto includes:
-
--   Embedding code and output from Python, R, and JavaScript via integration with Jupyter, Knitr, and Observable.
--   A variety of extensions to Pandoc markdown useful for technical writing including cross-references, sub-figures, layout panels, hoverable citations and footnotes, callouts, and more.
--   A project system for rendering groups of documents at once, sharing options across documents, and producing aggregate output like websites and books.
--   Authoring using a wide variety of editors and notebooks including JupyterLab, RStudio, and VS Code.
--   A visual markdown editor that provides a productive writing interface for composing long-form documents.
-
-## Quarto highlights
-
-::: columns
-::: {.column width="5%"}
-:::
-
-::: {.column width="40%"}
-::: bulletbox
-::: {.fragment .fade-in-then-semi-out}
-![](images/horst_quarto_ball-1_4.png){width="50px" fig-alt="One quadrant of the Quarto logo."} Consistent implementation of attractive and handy features across outputs: tabsets, code-folding, syntax highlighting, etc.
-:::
-:::
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="40%"}
-::: bulletbox
-::: {.fragment .fade-in-then-semi-out}
-![](images/horst_quarto_ball-2_4.png){width="50px" fig-alt="Two quadrants of the Quarto logo."} More accessible defaults as well as better support for accessibility
-:::
-:::
-:::
-
-::: {.column width="5%"}
-:::
-:::
-
-::: columns
-::: {.column width="5%"}
-:::
-
-::: {.column width="40%"}
-::: bulletbox
-::: {.fragment .fade-in-then-semi-out}
-![](images/horst_quarto_ball-3_4.png){width="50px" fig-alt="Three quadrants of the Quarto logo."} Guardrails, particularly helpful for new learners: YAML completion, informative syntax errors, etc.
-:::
-:::
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="40%"}
-::: bulletbox
-::: {.fragment .fade-in-then-semi-out}
-![](images/horst_quarto_ball-4_4.png){width="50px" fig-alt="Four quadrants of the Quarto logo."} Support for other languages like Python, Julia, Observable, and more via Jupyter engine for executable code chunks.
-:::
-:::
-:::
-
-::: {.column width="5%"}
-:::
-:::
-
-## Demo
 
 ## Quarto CLI orchestrates<br>each step of rendering {.takeaway .center}
 
 ::: {.fragment .fade-up}
 ![](images/horst_qmd_render_schema.png){fig-alt="A schematic representing rendering of Quarto documents from .qmd, to knitr or jupyter, to plain text markdown, then converted by pandoc into any number of output types including html, PDF, or Word document." fig-align="center"}
+:::
+
+## Quarto enables contributing <br>from different tools {.takeaway .center}
+
+::: centered
+::: columns
+::: {.column width="45%"}
+::: borderbox
+![](images/2-collaborate/tools-rstudio-ide.png){fig-alt="Screenshot of RStudio IDE" width="80%"}
+:::
+:::
+
+::: {.column width="45%"}
+::: borderbox
+![](images/2-collaborate/tools-jupyterhub.png){fig-alt="Screenshot of Jupyter Lab" width="80%"}
+:::
+:::
+:::
+
+::: columns
+::: {.column width="45%"}
+::: borderbox
+![](images/2-collaborate/tools-github-ide.png){fig-alt="Screenshot of GitHub IDE" width="80%"}
+:::
+:::
+
+::: {.column width="45%"}
+::: borderbox
+![](images/2-collaborate/tools-vscode-ide.png){fig-alt="Screenshot of VS Code IDE" width="80%"}
+:::
+:::
+:::
 :::
 
 ## Quarto makes moving between formats straightforward {.takeaway .center}
@@ -212,68 +220,93 @@ website:
 :::
 :::
 
-## Quarto facilitates open sharing {.takeaway .center}
+## Rmd conversion with command line  {background-color="#0F1620"}
 
-<br>
 
-::: {.fragment .fade-up .midi}
-Tooling that makes it easy to share what you do<br> with the world on the web is incredibly useful
+1) Install quarto : `brew install quarto`
+
+2) Convert the Rmd file
+
+::: {.border}
+```bash
+Rscript -e 'knitr::convert_chunk_header("document.Rmd", "document.qmd")'
+```
 :::
 
-<br>
+3) Improve your document
 
-::: {.fragment .fade-up .midi}
-It's useful not just to you, but to the world<br> as it facilitates open sharing of knowledge<br> for learning and for reuse
+::: {.border}
+```bash
+quarto preview document.qmd
+```
 :::
 
-# Teach {.title-middle-ice background-image="images/horst_quarto_penguins_teach.png" aria-label="Two penguins in a room made of ice, looking out a window. One penguin is holding an icicle as a pointer, pointing at a Quarto logo moon in the sky, while the other penguin looks on."}
+4) Render the final document
 
-::: notes
+::: {.border}
+```bash
+quarto render document.qmd
+```
 :::
 
-## Course materials with Quarto {.takeaway .center}
+5) Publish the document
 
-<br>
-
-::: {.fragment .fade-up}
-![](images/3-teach/many-lang-qmd-to-output.png){fig-alt="A schematic showing many computing languages (R, Python, Julia, Observable, and more) going into many single qmd files, going through Quarto, to generate an HTML, PDF, or Word document or more. The Quarto logo is depicted as a baseball a penguin is spinning." fig-align="center"}
+::: {.border}
+```bash
+quarto publish
+```
 :::
 
-::: notes
-:::
+## Videos demos {background-color="#0F1620"}
 
-## References
+- [RStudio from Rmd file](https://mine.quarto.pub/hello-quarto/videos/demo-1-share.mp4)
+- [JupyterLab](https://mine.quarto.pub/hello-quarto/videos/demo-2-collaborate.mp4)
+- [Chalkboard](https://mine.quarto.pub/hello-quarto/videos/demo-3-teach.mp4)
+- [Rstudio from scratch](https://mine.quarto.pub/hello-quarto/videos/demo-3-teach.mp4)
+- [RStudio make website](https://camembr.quarto.pub/hello-quarto/videos/make_website.mp4)
+- [Rstudio copy-paste text](https://camembr.quarto.pub/hello-quarto/videos/copypaste_text.mp4)
+- [Rstudio copy-paste image](https://camembr.quarto.pub/hello-quarto/videos/copypaste_image.mp4)
 
--   Slides: [github.com/mine-cetinkaya-rundel/hello-quarto-demo](https://github.com/mine-cetinkaya-rundel/hello-quarto-demo)
+## Conclusion {background-color="#0F1620"}
 
--   Video: [Quarto - le nouvel outil pour créer vos dataviz](https://youtu.be/Cwg7tdSdRvY)
+- Versatile, multi-languages, quarto is a great tool for publishing.
+- Quarto CLI is really a game changer.
+- Very well documented.
+- Publishing and hosting is really easy.
+- Very powerful syntax but the level of knowledge needed is still quite high.
+- Well integrated with RStudio and VSCode but can be used on the command line with a text editor which was difficult to do with the RMarkdown tools.
 
--   Video: [Reproducible authoring with Quarto](https://youtu.be/6p4vOKS6Xls)
+## Examples {background-color="#0F1620"}
 
--   Video: [Openscapes: Hello Quarto with NASA Openscapes, RLadies Santa Barbara, and JJ Allaire](https://youtu.be/azVAl343CIU)
+### The examples I worked on to prepare this presentation
 
--   Quarto documentation: [quarto.org](https://quarto.org/)
+- Python tools for Big Data (Jupyter notebooks) : [quarto-html](https://pnavaro.github.io/big-data/quarto), [jupyterbook](https://pnavaro.github.io/big-data), [repo](https://github.com/pnavaro/big-data)
+- Statistique en grande dimension (Laurent Rouvière) : [html](https://pnavaro.github.io/tutoriel-grande-dimension/), [repo](https://github.com/pnavaro/tutoriel-grande-dimension)
+- Partitionnement élagué avec des divergences de Bregman (Claire Brécheteau) : [html-quarto](https://brecheteau.pages.math.cnrs.fr/trimmed-bregman-clustering/quarto), [html-bookdown](https://brecheteau.pages.math.cnrs.fr/trimmed-bregman-clustering/), [repo](https://plmlab.math.cnrs.fr/brecheteau/trimmed-bregman-clustering).
+- Site web de l'atelier données (Marie-Claude Quidoz et Pierre Brochard) : [html](https://gt-atelier-donnees.miti.cnrs.fr/), [repo](https://github.com/miti-gt-donnees/site-quarto) 
 
--   Quarto gallery: [quarto.org/docs/gallery](https://quarto.org/docs/gallery/)
+### Journal of the French Statistical Society: [computo](https://computo.sfds.asso.fr).
 
--   Quarto tip a day: [rstd.io/quartotip](https://rstd.io/quartotip)
+- A Python Package for Sampling from Copulae: clayton : [html](https://computo.sfds.asso.fr/published-202301-boulin-clayton/), [pdf](https://computo.sfds.asso.fr/published-202301-boulin-clayton/published-202301-boulin-clayton.pdf), [repo](https://github.com/computorg/published-202301-boulin-clayton).
+- Visualizing Data using t-SNE: a mock Computo contribution : [html](https://computo.sfds.asso.fr/published-paper-tsne/), [repo](https://github.com/computorg/published-paper-tsne).
 
-## Tutorials
+## Tutorials {background-color="#0F1620"}
 
--   [Learning by doing: migrating to Quarto from Bookdown](https://www.openscapes.org/blog/2022/07/21/quarto-migrate/)
-
+- [Making Slides in Quarto with reveal.js](https://meghan.rbind.io/blog/quarto-slides/)
 - [With Quarto Coming, is R Markdown Going Away? No.](https://yihui.org/en/2022/04/quarto-r-markdown/)
 - [Porting a distill blog to quarto](https://blog.djnavarro.net/posts/2022-04-20_porting-to-quarto)
 - [Notes on Changing from Rmarkdown/Bookdown to Quarto](https://www.njtierney.com/post/2022/04/11/rmd-to-qmd/) 
 
+## References {background-color="#0F1620"}
 
-## Examples
+-   Slides: [Mine Cetinkaya-Rundel](https://github.com/mine-cetinkaya-rundel/hello-quarto)
+-   Slides: [Aurélie Mercadié & Christophe Regouby](https://github.com/CamembR/quarto_meetup)
+-   Video: [Quarto - le nouvel outil pour créer vos dataviz](https://youtu.be/Cwg7tdSdRvY)
+-   Video: [Reproducible authoring with Quarto](https://youtu.be/6p4vOKS6Xls)
+-   Video: [Hello Quarto with NASA Openscapes, RLadies Santa Barbara, and JJ Allaire](https://youtu.be/azVAl343CIU)
+-   Video: [Reproducible Publications with Julia and Quarto](https://youtu.be/Y1uKNO32H_I)
+-   Quarto documentation: [quarto.org](https://quarto.org/)
+-   Quarto gallery: [quarto.org/docs/gallery](https://quarto.org/docs/gallery/)
+-   Quarto tip a day: [rstd.io/quartotip](https://rstd.io/quartotip)
+-   Create beautiful interactive slide decks with Reveal.js: [html](https://quarto.org/docs/presentations/revealjs/demo/), [sources](https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/revealjs/demo)
 
-- [Python tools for Big Data](https://pnavaro.github.io/big-data/quarto)
-- [Statistique en grande dimension](https://pnavaro.github.io/tutoriel-grande-dimension/)
-- [A Python Package for Sampling from Copulae: clayton](https://github.com/computorg/published-202301-boulin-clayton)
-- [Partitionnement élagué avec des divergences de Bregman](https://brecheteau.pages.math.cnrs.fr/trimmed-bregman-clustering/quarto)
-
-## Examples
-
-- 
