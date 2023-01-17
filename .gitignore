@@ -10,3 +10,4 @@ _site
 /.quarto/
 /.luarc.json
 index-speaker.html
+*.swp

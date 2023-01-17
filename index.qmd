@@ -53,6 +53,7 @@ editor: visual
 - large community, 
 - many extensions, 
 - MyST syntax is really great. 
+- High-quality printable pdf document
 - Rmd files could be used through jupytext (did not try)
 - This is the best alternative to quarto for books.
 
