@@ -54,7 +54,7 @@ editor: visual
 - many extensions, 
 - MyST syntax is really great. 
 - Rmd files could be used through jupytext (did not try)
-- This is the best alternative to quarto.
+- This is the best alternative to quarto for books.
 
 ##  The R Markdown {background-color="#0F1620" auto-animate="true"}
 
