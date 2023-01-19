@@ -224,8 +224,13 @@ website:
 
 ## Rmd conversion with command line  {background-color="#0F1620"}
 
+1) Install quarto
 
-1) Install quarto : `brew install quarto`
+::: {.border}
+```bash
+brew install quarto
+```
+:::
 
 2) Convert the Rmd file
 
@@ -282,7 +287,7 @@ quarto publish
 
 ### The examples I worked on to prepare this presentation
 
-- Python tools for Big Data (Jupyter notebooks) : [quarto-html](https://pnavaro.github.io/big-data/quarto), [jupyterbook](https://pnavaro.github.io/big-data), [repo](https://github.com/pnavaro/big-data)
+- Python tools for Big Data (Jupyter notebooks) : [quarto-html](https://pnavaro.github.io/big-data/quarto/intro.html), [jupyterbook](https://pnavaro.github.io/big-data), [repo](https://github.com/pnavaro/big-data)
 - Statistique en grande dimension (Laurent Rouvière) : [html](https://pnavaro.github.io/tutoriel-grande-dimension/), [repo](https://github.com/pnavaro/tutoriel-grande-dimension)
 - Partitionnement élagué avec des divergences de Bregman (Claire Brécheteau) : [html-quarto](https://brecheteau.pages.math.cnrs.fr/trimmed-bregman-clustering/quarto), [html-bookdown](https://brecheteau.pages.math.cnrs.fr/trimmed-bregman-clustering/), [repo](https://plmlab.math.cnrs.fr/brecheteau/trimmed-bregman-clustering).
 - Site web de l'atelier données (Marie-Claude Quidoz et Pierre Brochard) : [html](https://gt-atelier-donnees.miti.cnrs.fr/), [repo](https://github.com/miti-gt-donnees/site-quarto) 
