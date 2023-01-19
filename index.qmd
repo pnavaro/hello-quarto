@@ -52,10 +52,11 @@ editor: visual
 - utilizes [Sphinx](https://www.sphinx-doc.org) heavily under the hood
 - large community, 
 - many extensions, 
-- MyST syntax is really great. 
+- [MyST](https://myst.tools) syntax is really great. 
 - High-quality printable pdf document
 - Rmd files could be used through jupytext (did not try)
 - This is the best alternative to quarto for books.
+- "Guide de Bonnes Pratiques sur la gestion des données de la Recherche" : [pdf](https://mi-gt-donnees.pages.math.unistra.fr/guide/guide_bonnes_pratiques_gestion_donnees_recherche_v2.pdf), [html](https://mi-gt-donnees.page    s.math.unistra.fr/guide), [repo](https://github.com/miti-gt-donnees/guide).
 
 ##  The R Markdown {background-color="#0F1620" auto-animate="true"}
 
