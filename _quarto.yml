@@ -1,18 +1,11 @@
 project:
   type: website
+  execute-dir: project
+  preview:
+    port: 7654
 
-website:
-  title: "hello-quarto"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-
-format:
-  html:
-    theme: cosmo
-    css: styles.css
-    toc: true
-
-
-
+revealjs:
+    echo: true
+    code-line-numbers: false
+    execute:
+       enabled: true

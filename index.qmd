@@ -26,13 +26,13 @@ editor: visual
 
 [artwork by allison horst]{.custom-artwork}
 
-## Publishing tools using Markdown {background-color="#0F1620" auto-animate="true"}
+## Publishing tools using Markdown {background-color="#0F1620" auto-animate="true" .smaller}
 
 - Static site generators: [Jekyll](https://jekyllrb.com), [Hugo](https://gohugo.io), [Pelican](https://docs.getpelican.com/).
 
 - Converters
    * [Pandoc](https://pandoc.org) : a universal document converter 
-   * [jupytext](https://jupytext.readthedocs.io/en/latest/) : Jupyter Notebooks as Markdown Documents, Julia, Python or R scripts 
+   * [jupytext](https://jupytext.readthedocs.io/en/latest/) : Jupyter Notebooks as Markdown or Quarto documents, Julia, Python or R scripts 
 
 - Slides
    * [pandoc + beamer](https://fr.overleaf.com/learn/latex/Beamer) : use the presentation class for $\LaTeX$
@@ -43,6 +43,10 @@ editor: visual
    * [Remark.jl](https://github.com/piever/Remark.jl) : Create markdown presentations
    * [Franklin.jl](https://franklinjl.org) : Building static websites
    * [Weave.jl](https://weavejl.mpastell.com/stable/) : Scientific Reports
+
+- Collaborative editing
+  * [CodiMD](https://codimd.math.cnrs.fr): realtime collaborative markdown notes on all platforms.
+  * [Stylo](https://stylo.huma-num.fr): a semantic text editor
 
 ## {background-color="#0F1620"}
 
@@ -264,6 +268,132 @@ quarto publish
 ```
 :::
 
+## Mathematics
+
+```plaintext
+$$
+\mathbf{t}^* \in {\rm arg}\,\min_{\mathbf{t}} P \min_{j = 1..k}\|\cdot-m(P_{t_j,h})\|^2+v(P_{t_j,h}).
+$$
+```
+
+$$
+\mathbf{t}^* \in {\rm arg}\,\min_{\mathbf{t}} P \min_{j = 1..k}\|\cdot-m(P_{t_j,h})\|^2+v(P_{t_j,h}).
+$$
+
+## Callout Block
+
+::: callout-note
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+```plaintext
+::: {.callout-note icon=false}
+## Definition
+The <span style="color:teal">$k$-power distance-to-measure</span> ($k$-PDTM) $\rm d\it_{P,h,k}$ is
+defined for $x\in \mathbb{R}^d$ by:
+$$\rm d\it^2_{P,h,k}(x) = \min_{j = 1..k}\|x-m(P_{t^*_j,h})\|^2+v(P_{t^*_j,h})$$
+:::
+```
+
+::: {.callout-note icon=false}
+## Definition
+The <span style="color:teal">$k$-power distance-to-measure</span> ($k$-PDTM) 
+$\rm d\it_{P,h,k}$ is defined for $x\in \mathbb{R}^d$ by:
+$$
+\rm d\it^2_{P,h,k}(x) = \min_{j = 1..k}\|x-m(P_{t^*_j,h})\|^2+v(P_{t^*_j,h})
+$$
+:::
+
+## R Code {.smaller}
+
+```{.r}
+compute_means_and_weights <- function(P, centers, Sigma){
+    c = nrow(centers)
+    d = ncol(centers)
+    means = matrix(0, nrow = c, ncol = d)
+    weights = rep(0, c)
+    for (i in 1:c) {
+        nn = sort(mahalanobis(P, centers[i, ], Sigma[[i]],
+                  inverted = TRUE), index.return = TRUE)
+        nn$ix = nn$ix[1:k]
+        means[i, ] = colMeans(matrix(P[nn$ix, ], k, d))
+        weights[i] = mean(mahalanobis(P[nn$ix, ], means[i, ], Sigma[[i]],
+                  inverted = TRUE)) - log(det(Sigma[[i]]))
+            }
+    return(list(means = means, weights = weights))
+}
+```
+
+## Julia Code example {.smaller}
+
+```{julia}
+#| echo: true
+#| code-line-numbers: "1,16|3-4|6,12|1-16"
+function compute_means_and_weights_with_distances(points, centers, Σ )
+
+    d, c = size(centers)
+    μ, ω = zeros(d, c), zeros(c)
+
+    Threads.@threads for i in eachindex(ω)
+        dist = SqMahalanobis(Σ[i])
+        dists = pairwise(dist, data.points, centers[:,[i]], dims=2 )
+        idxs = sortperm(vec(dists))[1:k]
+        μ[:,i] .= vec(mean(view(points, :, idxs), dims = 2))
+        ω[i] = mean(pairwise(dist, view(points,:, idxs), μ[:,[i]], dims=2))
+    end
+
+    return μ, ω
+
+end
+```
+
+## Plot and folding code {.smaller}
+
+```{julia}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show the code"
+using CluGen, Plots
+o = clugen(2, 4, 400, [1, 0], pi / 8, [20, 10], 10, 1, 1.5)
+p = plot(o.points[:, 1], o.points[:, 2], seriestype = :scatter, group=o.clusters)
+```
+
+## {.centered}
+
+![Basketball](images/horst_quarto_basketball.png){width=400 fig-align="center"}
+
+```plaintext
+![Basketball](images/horst_quarto_basketball.png){width=400 fig-align="center"}
+```
+
+## Continuous integration {.smaller}
+
+`.gitlab-ci.yml` 
+
+```yaml
+image: python:3.9
+
+variables:
+  VERSION: 1.1.189
+  URL : "https://github.com/quarto-dev/quarto-cli/releases/download/"
+
+pages:
+  script:
+    - wget "${URL}/v${VERSION}/quarto-${VERSION}-linux-amd64.deb"
+    - dpkg -i quarto-${VERSION}-linux-amd64.deb
+    - quarto render
+    - mv _site public
+  artifacts:
+    paths:
+      - public
+```
+
+or use `quarto publish`
+
+::: footer
+Learn more: [Publishing Basics](https://quarto.org/docs/publishing/)
+:::
+
 ## Videos demos {background-color="#0F1620"}
 
 - [RStudio from Rmd file](https://mine.quarto.pub/hello-quarto/videos/demo-1-share.mp4)
@@ -274,6 +404,19 @@ quarto publish
 - [Rstudio copy-paste text](https://camembr.quarto.pub/hello-quarto/videos/copypaste_text.mp4)
 - [Rstudio copy-paste image](https://camembr.quarto.pub/hello-quarto/videos/copypaste_image.mp4)
 
+## Examples {background-color="#0F1620"}
+
+- Python tools for Big Data (Jupyter notebooks) : [quarto-html](https://pnavaro.github.io/big-data/quarto/intro.html), [jupyterbook](https://pnavaro.github.io/big-data), [repo](https://github.com/pnavaro/big-data)
+- Statistique en grande dimension (Laurent Rouvière) : [html](https://pnavaro.github.io/tutoriel-grande-dimension/), [repo](https://github.com/pnavaro/tutoriel-grande-dimension)
+- Partitionnement élagué avec des divergences de Bregman (Claire Brécheteau) : [html](https://brecheteau.pages.math.cnrs.fr/trimmed-bregman-clustering), [repo](https://plmlab.math.cnrs.fr/brecheteau/trimmed-bregman-clustering).
+- Site web de l'atelier données (Marie-Claude Quidoz et Pierre Brochard) : [html](https://gt-atelier-donnees.miti.cnrs.fr/), [repo](https://github.com/miti-gt-donnees/site-quarto) 
+
+### Journal of the French Statistical Society: [computo](https://computo.sfds.asso.fr).
+
+- A Python Package for Sampling from Copulae: clayton : [html](https://computo.sfds.asso.fr/published-202301-boulin-clayton/), [pdf](https://computo.sfds.asso.fr/published-202301-boulin-clayton/published-202301-boulin-clayton.pdf), [repo](https://github.com/computorg/published-202301-boulin-clayton).
+- Visualizing Data using t-SNE: a mock Computo contribution : [html](https://computo.sfds.asso.fr/published-paper-tsne/), [repo](https://github.com/computorg/published-paper-tsne).
+
+
 ## Conclusion {background-color="#0F1620"}
 
 - Versatile, multi-languages, quarto is a great tool for publishing.
@@ -283,19 +426,6 @@ quarto publish
 - Very powerful syntax but the level of knowledge needed is still quite high.
 - Well integrated with RStudio and VSCode but can be used on the command line with a text editor which was difficult to do with the RMarkdown tools.
 
-## Examples {background-color="#0F1620"}
-
-### The examples I worked on to prepare this presentation
-
-- Python tools for Big Data (Jupyter notebooks) : [quarto-html](https://pnavaro.github.io/big-data/quarto/intro.html), [jupyterbook](https://pnavaro.github.io/big-data), [repo](https://github.com/pnavaro/big-data)
-- Statistique en grande dimension (Laurent Rouvière) : [html](https://pnavaro.github.io/tutoriel-grande-dimension/), [repo](https://github.com/pnavaro/tutoriel-grande-dimension)
-- Partitionnement élagué avec des divergences de Bregman (Claire Brécheteau) : [html-quarto](https://brecheteau.pages.math.cnrs.fr/trimmed-bregman-clustering/quarto), [html-bookdown](https://brecheteau.pages.math.cnrs.fr/trimmed-bregman-clustering/), [repo](https://plmlab.math.cnrs.fr/brecheteau/trimmed-bregman-clustering).
-- Site web de l'atelier données (Marie-Claude Quidoz et Pierre Brochard) : [html](https://gt-atelier-donnees.miti.cnrs.fr/), [repo](https://github.com/miti-gt-donnees/site-quarto) 
-
-### Journal of the French Statistical Society: [computo](https://computo.sfds.asso.fr).
-
-- A Python Package for Sampling from Copulae: clayton : [html](https://computo.sfds.asso.fr/published-202301-boulin-clayton/), [pdf](https://computo.sfds.asso.fr/published-202301-boulin-clayton/published-202301-boulin-clayton.pdf), [repo](https://github.com/computorg/published-202301-boulin-clayton).
-- Visualizing Data using t-SNE: a mock Computo contribution : [html](https://computo.sfds.asso.fr/published-paper-tsne/), [repo](https://github.com/computorg/published-paper-tsne).
 
 ## Tutorials {background-color="#0F1620"}
 
@@ -304,6 +434,7 @@ quarto publish
 - [Porting a distill blog to quarto](https://blog.djnavarro.net/posts/2022-04-20_porting-to-quarto)
 - [Notes on Changing from Rmarkdown/Bookdown to Quarto](https://www.njtierney.com/post/2022/04/11/rmd-to-qmd/) 
 - [Getting Started with Quarto](https://jthomasmock.github.io/quarto-2hr-webinar/)
+- [A year of using Quarto with Julia, Tips and tricks for Julia practitioners](https://www.paltmeyer.com/blog/posts/tips-and-tricks-for-using-quarto-with-julia/)
 
 ## References {background-color="#0F1620"}
 
